@@ -92,7 +92,11 @@ getElementWithId('police-call').addEventListener('click',function(){
 });
 
 // fire service section 
-
 getElementWithId('fire-call').addEventListener('click', function(){
     callService('Fire Service','999');
+});
+
+// ambulance service section 
+getElementWithId('ambulance-call').addEventListener('click',function(){
+    callService('Ambulance Service','1994-999999');
 });
