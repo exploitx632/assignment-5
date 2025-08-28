@@ -111,3 +111,8 @@ getElementWithId('govt-call').addEventListener('click',function(){
     callService('Anti-Corruption Helpline','106');
 });
 
+// electricity helpline section 
+getElementWithId('electricity-call').addEventListener('click',function(){
+    callService('Electricity Helpline','16216');
+});
+
