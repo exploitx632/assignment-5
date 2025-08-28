@@ -31,3 +31,22 @@ for (let heart of heartBtn) {
     setInnerValue("heart-count", heartCount);
   });
 }
+
+// set inner value of balance
+function setInnerBalance(value){
+let availableBalance = getElementWithId('balance');
+availableBalance.innerText = value;
+}
+
+getElementWithId('national-call').addEventListener('click',function(){
+    let cost = 20;
+    let balance = parseInt(getInnerValue('balance'));
+    if(balance <20){
+        alert("You don't have enough coins, you need at least 20 coins to make a call.");
+        return;
+    }
+    alert('Calling National Emergency Service 999')
+    let balanceAfterCost = balance - cost ;
+    setInnerBalance(balanceAfterCost);
+})
+
