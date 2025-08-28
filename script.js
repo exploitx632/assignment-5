@@ -54,7 +54,7 @@ function storeData() {
   const historyContainer = getElementWithId("history-container");
   let div = document.createElement("div");
   for (let data of callHistoryData) {
-    div.innerHTML = `<div class='flex justify-between mt-3 bg-gray-100 p-[15px] rounded-2xl items-center'>
+    div.innerHTML = `<div class='flex justify-between mt-3 bg-gray-100 p-[15px] w-auto rounded-2xl items-center'>
                 <div>
                     <h1 class='text-xl'>${data.name}</h1>
                     <p>${data.number}</p>
@@ -85,3 +85,10 @@ function callService(service, number) {
 getElementWithId("national-call").addEventListener("click", function () {
   callService("National Emergency Service", "999");
 });
+
+// emergency police section 
+getElementWithId('police-call').addEventListener('click',function(){
+    callService('Police Helpline','999');
+});
+
+
