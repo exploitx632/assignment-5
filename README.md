@@ -12,11 +12,13 @@ How do you create and insert a new element into the DOM?
   
   1.first of all i will access the parent element 
         
-  2.i create a element by using [document.createElement()];
-   then i will set some text inside div then i will append the element to parent element using [parentElement.appendChild()]
+  2.i create a element by using [document.createElement()]; then i will set some text inside div then i will append the element to parent element using [parentElement.appendChild()]
             like , 
-            let parentElement = document.getElementById('parent')
+            
+            let parentElement = document.getElementById('parent');
+            
             let div = document.createElement('div');
+            
             div.innerText = 'This is child element';
             parentElement.appendChild(div);
 
@@ -31,7 +33,7 @@ What is Event Bubbling and how does it work?
         console.log('Child was clicked');
     })
 
-   means here child will be first click then parent .
+means here child will be first click then parent .
  
 What is Event Delegation in JavaScript? Why is it useful?
 
