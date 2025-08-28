@@ -105,3 +105,9 @@ getElementWithId('ambulance-call').addEventListener('click',function(){
 getElementWithId('help-call').addEventListener('click',function(){
     callService('Woman & Child Helpline','109');
 })
+
+// anti corruption section 
+getElementWithId('govt-call').addEventListener('click',function(){
+    callService('Anti-Corruption Helpline','106');
+});
+
