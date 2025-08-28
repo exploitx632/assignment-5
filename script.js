@@ -116,3 +116,7 @@ getElementWithId('electricity-call').addEventListener('click',function(){
     callService('Electricity Helpline','16216');
 });
 
+// brac helpline section 
+getElementWithId('ngo-call').addEventListener('click',function(){
+    callService('Brac Helpline','16445');
+});
