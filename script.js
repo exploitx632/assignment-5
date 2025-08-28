@@ -4,8 +4,8 @@ function getElementWithId(id) {
   const element = document.getElementById(id);
   return element;
 }
-function getElementWithClass(Class) {
-  const element = document.getElementsByClassName(Class);
+function getElementsWithClass(className) {
+  const element = document.querySelectorAll(className);
   return element;
 }
 
@@ -23,11 +23,11 @@ function setInnerValue(id, value) {
 }
 
 // heart count btn
-const heartBtn = getElementWithClass("heart");
+const heartBtn = getElementsWithClass(".heart");
 for (let heart of heartBtn) {
   heart.addEventListener("click", function () {
-    const heart = parseInt(getInnerValue("heart-count"));
-    let heartCount = heart + 1;
+    const heartValue = parseInt(getInnerValue("heart-count"));
+    let heartCount = heartValue + 1;
     setInnerValue("heart-count", heartCount);
   });
 }
@@ -52,8 +52,9 @@ function historyData(type, num) {
 // store data on history section
 function storeData() {
   const historyContainer = getElementWithId("history-container");
-  let div = document.createElement("div");
+  historyContainer.innerHTML = '';
   for (let data of callHistoryData) {
+    let div = document.createElement("div");
     div.innerHTML = `<div class='flex justify-between mt-3 bg-gray-100 p-[15px] w-auto rounded-2xl items-center'>
                 <div>
                     <h1 class='text-xl'>${data.name}</h1>
@@ -61,14 +62,14 @@ function storeData() {
                 </div>
                 <div>${data.time}</div>
             </div>`;
+    historyContainer.appendChild(div);
   }
-  historyContainer.appendChild(div);
 }
 // call service function for each button
 function callService(service, number) {
   let cost = 20;
   let balance = parseInt(getInnerValue("balance"));
-  if (balance < 20) {
+  if (balance < cost) {
     alert(
       "You don't have enough coins, you need at least 20 coins to make a call."
     );
@@ -127,11 +128,11 @@ getElementWithId("travel-call").addEventListener("click", function () {
 });
 
 // copy btn
-let copyBtn = getElementWithClass("copy-btn");
+let copyBtn = getElementsWithClass(".copy-btn");
 for (let btn of copyBtn) {
   btn.addEventListener("click", function () {
     let value = parseInt(getInnerValue("copy-count"));
-    let count = (value += 1);
+    let count = value + 1;
     setInnerValue("copy-count", count);
 
     // copy to clipboard
@@ -139,14 +140,16 @@ for (let btn of copyBtn) {
     let number = box.querySelector(".number").innerText;
     navigator.clipboard.writeText(number).then(function () {
       alert(`Number Copied ${number}`);
+    }).catch(function(){
+        alert('Number Copied Failed');
     });
   });
 }
-
-getElementWithId('clear-btn').addEventListener('click',function(){
-    getElementWithId('history-container').innerHTML="";
-    getElementWithId("history-container").innerHTML = "";
-    getElementWithId('balance').innerText = "100";
-  getElementWithId('heart-count').innerText = "0";
-  getElementWithId('copy-count').innerText = "0";
-})
+// clear btn 
+getElementWithId("clear-btn").addEventListener("click", function () {
+    callHistoryData.length = 0;
+  getElementWithId("history-container").innerHTML = "";
+  getElementWithId("balance").innerText = "100";
+  getElementWithId("heart-count").innerText = "0";
+  getElementWithId("copy-count").innerText = "0";
+});
