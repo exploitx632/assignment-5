@@ -37,16 +37,21 @@ function setInnerBalance(value){
 let availableBalance = getElementWithId('balance');
 availableBalance.innerText = value;
 }
-
-getElementWithId('national-call').addEventListener('click',function(){
+// call service function for each button
+function callService(service , number){
     let cost = 20;
     let balance = parseInt(getInnerValue('balance'));
     if(balance <20){
         alert("You don't have enough coins, you need at least 20 coins to make a call.");
         return;
     }
-    alert('Calling National Emergency Service 999')
+    alert(`Calling ${service} ${number}`)
     let balanceAfterCost = balance - cost ;
     setInnerBalance(balanceAfterCost);
+}
+
+// national emergency service button 
+getElementWithId('national-call').addEventListener('click',function(){
+    callService('National Emergency Service','999')
 })
 
