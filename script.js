@@ -91,4 +91,8 @@ getElementWithId('police-call').addEventListener('click',function(){
     callService('Police Helpline','999');
 });
 
+// fire service section 
 
+getElementWithId('fire-call').addEventListener('click', function(){
+    callService('Fire Service','999');
+});
