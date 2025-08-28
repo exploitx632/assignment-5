@@ -120,3 +120,8 @@ getElementWithId('electricity-call').addEventListener('click',function(){
 getElementWithId('ngo-call').addEventListener('click',function(){
     callService('Brac Helpline','16445');
 });
+
+// bangladesh railway helpline 
+getElementWithId('travel-call').addEventListener('click',function(){
+    callService('Bangladesh Railway Helpline','163');
+});
