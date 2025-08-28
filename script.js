@@ -100,3 +100,8 @@ getElementWithId('fire-call').addEventListener('click', function(){
 getElementWithId('ambulance-call').addEventListener('click',function(){
     callService('Ambulance Service','1994-999999');
 });
+
+// woman and child helpline section 
+getElementWithId('help-call').addEventListener('click',function(){
+    callService('Woman & Child Helpline','109');
+})
