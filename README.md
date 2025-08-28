@@ -25,7 +25,7 @@ What is Event Bubbling and how does it work?
         console.log('Child was clicked');
     })
 
-    here child will be first clicked then parent .
+   means here child will be first clicked then parent .
  
 What is Event Delegation in JavaScript? Why is it useful?
 Event delegation is a technique where instead of using eventListener to multiple child ,we use a single eventListener to parent element and using event bubbling to handle event from child element. it is useful because it reduce eventListener and increase performance.
