@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,16 +13,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+
+    <!-- custom css  -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
-    
+    <!-- header section  -->
+    <header>
+        <nav class="mb-3.5 w-full md:h-[100px] md:py-[20px] md:px-[60px]">
+            <ul class="list-none flex flex-col md:flex-row items-center md:justify-between md:items-center">
+                <li class="flex md:items-center gap-2.5 text-[#006747] mb-2.5">
+                    <img src="/assets/logo.png" alt="" class="w-[50px]">
+                    <h1 class="text-[20px] font-bold">Emergency
+                        <span class="md:block">Service</span>
+                    </h1>
+                </li>
+                <li class="flex justify-between items-center gap-2.5">
+                    <div
+                        class="heart-count flex justify-center items-center gap-2.5 rounded-4xl bg-[#41FF6B1A] h-[52px] w-[106px] py-[12px] px-[20px]">
+                        <span class="font-bold" id="heart-count">0</span>
+                        <img src="/assets/heart.png" class="w-[30px] inline" alt="">
+                    </div>
+                    <div
+                        class="available-coin flex justify-center items-center gap-2.5 rounded-4xl bg-[#41FF6B1A] h-[52px] w-[106px] py-[12px] px-[20px]">
+                        <span id="balance" class=" font-bold ">100</span>
+                        <img src="/assets/coin.png" class="w-[30px] inline" alt="">
+                    </div>
+                    <button
+                        class="copy-count flex justify-center items-center gap-2.5 rounded-4xl bg-[#00A63E] text-white h-[52px] w-[106px] py-[12px] px-[20px] font-bold hover:bg-gray-300">
+                        <span id="copy-count">0</span>
+                        <p>Copy</p>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <!-- banner section  -->
+        <div
+            class="banner w-full md:h-[240px] bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] flex flex-col justify-center items-center text-center p-2.5 gap-2.5 text-white">
+            <img src="/assets/logo-dark.png" class="w-[92px]" alt="">
+            <h1 class="font-bold text-2xl">Emergency Service Directory</h1>
+            <p>Government Emergency Services at Your Fingertip - A Project by Government of the People's Republic of
+                Bangladesh</p>
+        </div>
+    </header>
 
 
 
@@ -39,4 +74,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
