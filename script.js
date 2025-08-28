@@ -86,42 +86,67 @@ getElementWithId("national-call").addEventListener("click", function () {
   callService("National Emergency Service", "999");
 });
 
-// emergency police section 
-getElementWithId('police-call').addEventListener('click',function(){
-    callService('Police Helpline','999');
+// emergency police section
+getElementWithId("police-call").addEventListener("click", function () {
+  callService("Police Helpline", "999");
 });
 
-// fire service section 
-getElementWithId('fire-call').addEventListener('click', function(){
-    callService('Fire Service','999');
+// fire service section
+getElementWithId("fire-call").addEventListener("click", function () {
+  callService("Fire Service", "999");
 });
 
-// ambulance service section 
-getElementWithId('ambulance-call').addEventListener('click',function(){
-    callService('Ambulance Service','1994-999999');
+// ambulance service section
+getElementWithId("ambulance-call").addEventListener("click", function () {
+  callService("Ambulance Service", "1994-999999");
 });
 
-// woman and child helpline section 
-getElementWithId('help-call').addEventListener('click',function(){
-    callService('Woman & Child Helpline','109');
+// woman and child helpline section
+getElementWithId("help-call").addEventListener("click", function () {
+  callService("Woman & Child Helpline", "109");
+});
+
+// anti corruption section
+getElementWithId("govt-call").addEventListener("click", function () {
+  callService("Anti-Corruption Helpline", "106");
+});
+
+// electricity helpline section
+getElementWithId("electricity-call").addEventListener("click", function () {
+  callService("Electricity Helpline", "16216");
+});
+
+// brac helpline section
+getElementWithId("ngo-call").addEventListener("click", function () {
+  callService("Brac Helpline", "16445");
+});
+
+// bangladesh railway helpline
+getElementWithId("travel-call").addEventListener("click", function () {
+  callService("Bangladesh Railway Helpline", "163");
+});
+
+// copy btn
+let copyBtn = getElementWithClass("copy-btn");
+for (let btn of copyBtn) {
+  btn.addEventListener("click", function () {
+    let value = parseInt(getInnerValue("copy-count"));
+    let count = (value += 1);
+    setInnerValue("copy-count", count);
+
+    // copy to clipboard
+    let box = btn.closest(".box");
+    let number = box.querySelector(".number").innerText;
+    navigator.clipboard.writeText(number).then(function () {
+      alert(`Number Copied ${number}`);
+    });
+  });
+}
+
+getElementWithId('clear-btn').addEventListener('click',function(){
+    getElementWithId('history-container').innerHTML="";
+    getElementWithId("history-container").innerHTML = "";
+    getElementWithId('balance').innerText = "100";
+  getElementWithId('heart-count').innerText = "0";
+  getElementWithId('copy-count').innerText = "0";
 })
-
-// anti corruption section 
-getElementWithId('govt-call').addEventListener('click',function(){
-    callService('Anti-Corruption Helpline','106');
-});
-
-// electricity helpline section 
-getElementWithId('electricity-call').addEventListener('click',function(){
-    callService('Electricity Helpline','16216');
-});
-
-// brac helpline section 
-getElementWithId('ngo-call').addEventListener('click',function(){
-    callService('Brac Helpline','16445');
-});
-
-// bangladesh railway helpline 
-getElementWithId('travel-call').addEventListener('click',function(){
-    callService('Bangladesh Railway Helpline','163');
-});
