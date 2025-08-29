@@ -75,7 +75,7 @@ function callService(service, number) {
     );
     return;
   }
-  alert(`Calling ${service} ${number}`);
+  alert(`📞 Calling ${service} ${number}...`);
   let balanceAfterCost = balance - cost;
   setInnerBalance(balanceAfterCost);
   historyData(service, number);
